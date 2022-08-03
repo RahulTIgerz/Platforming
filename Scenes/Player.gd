@@ -22,8 +22,10 @@ func update_animation(anim):
 	
 	pass
 	
-func handle_state(state):
-	print(state)
+func handle_state(player_state):
+	match(player_state):
+		state.STARTJUMP:
+			velocity.y = jump_speed
 	pass
 
 func get_input():
@@ -40,7 +42,7 @@ func _physics_process(delta):
 		player_state = state.IDLE
 	if Input.is_action_just_pressed("jump") and is_on_floor(): 
 		player_state = state.STARTJUMP
-	if velocity.x != 0:
+	elif velocity.x != 0:
 		player_state = state.RUNNING
 	
 	if not is_on_floor():
