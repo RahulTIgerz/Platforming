@@ -19,7 +19,24 @@ func _ready():
 	pass
 
 func update_animation(anim):
-	
+	if velocity.x < 0:
+		$Sprite.flip_h = true
+	elif velocity.x > 0:
+		$Sprite.flip_h = false
+	match(anim):
+		state.FALL:
+			$AnimationPlayer.play("fall")
+		state.ATTACK:
+			$AnimationPlayer.play("attack")
+		state.IDLE:
+			$AnimationPlayer.play("idle")
+		state.JUMP:
+			$AnimationPlayer.play("jump")
+		state.PUSHING:
+			$AnimationPlayer.play("pushing")
+		state.RUNNING:
+			$AnimationPlayer.play("running")
+		
 	pass
 	
 func handle_state(player_state):
