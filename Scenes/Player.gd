@@ -49,7 +49,7 @@ func _physics_process(delta):
 		if velocity.y < 0:
 			player_state = state.JUMP 
 		if velocity.y < 0:
-			player_state = state.Fall
+			player_state = state.FALL
 
 	handle_state(player_state)
 	update_animation(player_state)
