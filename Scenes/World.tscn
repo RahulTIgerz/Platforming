@@ -205,27 +205,33 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 0/z_index = 0
 
 [node name="World" type="Node2D"]
-position = Vector2( 231, 112 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -151, -101 )
+position = Vector2( 73, 19 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 224, 120 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 142.5, 39 )
 shape = SubResource( 1 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 224, 120 )
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 720
+smoothing_enabled = true
+script = ExtResource( 3 )
+
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 224, 120 )
 tile_set = SubResource( 21 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -262155, 0, 0, -262154, 0, 2, -262152, 0, 0, -262151, 0, 2, -262147, 0, 0, -262146, 0, 131076, -262145, 0, 131076, -327680, 0, 131076, -327679, 0, 2, -196621, 0, 0, -196620, 0, 1, -196619, 0, 131077, -196618, 0, 131075, -196617, 0, 1, -196616, 0, 131077, -196615, 0, 131075, -196614, 0, 2, -196611, 0, 65536, -196610, 0, 3, -196609, 0, 131073, -262144, 0, 5, -262143, 0, 65539, -131085, 0, 131072, -131084, 0, 5, -131083, 0, 3, -131082, 0, 131073, -131081, 0, 131073, -131080, 0, 5, -131079, 0, 3, -131078, 0, 131074, -131075, 0, 65541, -131074, 0, 65538, -196608, 0, 65536, -196607, 0, 65538, -65548, 0, 65536, -65547, 0, 65539, -65544, 0, 65541, -65543, 0, 65539, -65539, 0, 65541, -65538, 0, 131075, -65537, 0, 1, -131072, 0, 131077, -131071, 0, 65538, -12, 0, 131072, -11, 0, 131074, -8, 0, 131072, -7, 0, 131074, -3, 0, 131072, -2, 0, 131073, -1, 0, 4, -65536, 0, 131073, -65535, 0, 131074 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-smoothing_enabled = true
-script = ExtResource( 3 )
