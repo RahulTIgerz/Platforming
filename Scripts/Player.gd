@@ -65,7 +65,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		if velocity.y < 0:
 			player_state = state.JUMP 
-		if velocity.y < 0:
+		if velocity.y > 0:
 			player_state = state.FALL
 
 	handle_state(player_state)
