@@ -36,7 +36,7 @@ func update_animation(anim):
 			$AnimationPlayer.play("pushing")
 		state.RUNNING:
 			$AnimationPlayer.play("running")
-		
+
 	pass
 	
 func handle_state(player_state):
