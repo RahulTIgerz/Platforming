@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/tileset.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/SpikeTrap.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/DoorAndButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/SavePoint.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/World.gd" type="Script" id=8]
@@ -221,7 +222,6 @@ limit_left = 0
 limit_top = 0
 limit_right = 1280
 limit_bottom = 720
-smoothing_enabled = true
 script = ExtResource( 3 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -235,7 +235,10 @@ tile_data = PoolIntArray( -458767, 0, 0, -458766, 0, 131076, -458765, 0, 131076,
 position = Vector2( 276, 225 )
 
 [node name="Button" parent="DoorAndButton" index="0"]
-position = Vector2( -28, 21 )
+position = Vector2( -28, 134 )
+
+[node name="CollisionShape2D" parent="DoorAndButton/Button/Area2D" index="0"]
+position = Vector2( 0, -1 )
 
 [node name="Door" parent="DoorAndButton" index="1"]
 position = Vector2( -149, 141 )
@@ -244,5 +247,9 @@ scale = Vector2( 0.75, 1 )
 
 [node name="SavePoint" parent="." instance=ExtResource( 7 )]
 position = Vector2( 152, 349 )
+
+[node name="SpikeTrap" parent="." instance=ExtResource( 5 )]
+position = Vector2( 248, 354 )
+rotation = 3.14032
 
 [editable path="DoorAndButton"]
