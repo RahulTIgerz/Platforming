@@ -1,8 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scripts/sound_player.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/SpinningBlade.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Pixel Adventure 1/Free/Traps/Saw/On (38x38).png" type="Texture" id=2]
-
 
 [sub_resource type="Animation" id=1]
 length = 0.001
